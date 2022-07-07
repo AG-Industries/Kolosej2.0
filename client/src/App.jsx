@@ -6,7 +6,9 @@ import Navbar from "./components/Navbar";
 const App = () => {
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]);
 
-  const handleDateChange = (e) => setSelectedDate(e.target.value);
+  const handleDateChange = (e) => {
+    setSelectedDate(e.target.value);
+  }
   return (
     <>
       <Navbar handleDateChange={handleDateChange} selectedDate={selectedDate}/>

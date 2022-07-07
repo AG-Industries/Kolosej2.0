@@ -27,11 +27,13 @@ const Movie = ({ movie, date }) => {
         {movieDates.length > 0 ?
           movieDates.map((show) => (
             <a href={`https://vstopnice.kolosej.si/WebTicketNet/Performance.aspx?oid=${show.id}`}>
+            {show.theater !== 'Dvorana Komuna' && (
               <div className='flex flex-row rounded-lg bg-blue-300 mb-3 hover:scale-105 transition-all ease-in cursor-pointer'>
                 <h1 className='mx-5 my-2'>{show.theater}</h1>
                 <h1 className='mx-5 my-2'>{show.time.slice(0,-3)}</h1>
                 <h1 className='mx-5 my-2 font-bold rounded-md '>NAKUP</h1>
               </div>
+            )}
             </a>
           )):
           <div className='bg-red-300 rounded-lg'>
